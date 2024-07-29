@@ -17,7 +17,6 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import org.json.JSONObject;
-import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * The `Altcha` class provides functionality for generating and verifying cryptographic challenges.
