@@ -54,13 +54,6 @@ Or, if you use Gradle, add the following to your `build.gradle`:
 implementation 'org.altcha:altcha:1.0.0'
 ```
 -->
-## Warning
-This library relies on SecureRandom which may hang if there is not sufficient 'noise' on your Linux server.
-One fix is to add this to your JVM invocation:
-```
--Djava.security.egd=file:/dev/./urandom
-```
-
 
 ## Usage
 
@@ -82,7 +75,8 @@ public class Example {
             ChallengeOptions options = new ChallengeOptions()
                 .setMaxNumber(100000L) // the maximum random number
                 .setHmacKey(hmacKey)
-                .setExpiresInSeconds(3600) // 1 hour expiration
+                    .setUseSecureRandom(false) // useSecureRandom can cause hangs
+                .setExpiresInSeconds(3600); // 1 hour expiration
 
             System.out.println("Challenge created: " + challenge);
 

@@ -12,7 +12,7 @@ public class AltchaTest {
 
     @Test
     public void testRandomBytes() {
-        byte[] bytes = Altcha.randomBytes(16);
+        byte[] bytes = Altcha.randomBytes(16, false);
         assertNotNull(bytes);
         assertEquals(16, bytes.length);
     }
@@ -20,7 +20,7 @@ public class AltchaTest {
     @Test
     public void testRandomInt() {
         int max = 100;
-        int random = Altcha.randomInt(max);
+        int random = Altcha.randomInt(max, false);
         assertTrue(random >= 0 && random <= max);
     }
 
